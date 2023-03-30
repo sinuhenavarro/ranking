@@ -5,3 +5,9 @@
  * @returns
  */
 
+const urlJugadores = 'https://drive.google.com/file/d/12kTMpL1b5aAzGtg2cNRNMkodHk-bFvKf/view?usp=sharing'
+
+function jugadores2array(url){
+    const urlJugadoresGitHub = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/main/jugadores.json'
+ 
+}
