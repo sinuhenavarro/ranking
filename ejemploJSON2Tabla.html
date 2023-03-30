@@ -10,16 +10,13 @@
     <script>
         $(document).ready(function () {
 
-        const urlJugadoresGitHub = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/main/jugadores.json'
-
-
+            const urlJugadoresGitHub = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/main/jugadores.json'
             let data = []
 
             //OBTENEMOS LOS DATOS JSON 
-            $.getJSON(urlJugadoresGitHub, function (result) {
-                data.push(result);
+            $("button").click(function () {
+                $("#div1").load(urlJugadoresGitHub);
             });
-            console.log(data)
 
             // CREANDO UNA TABLA CON LOS DATOS
             var html = '<table class="table table-striped">';
