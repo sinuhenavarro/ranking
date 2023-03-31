@@ -12,9 +12,9 @@
         $(document).ready(function () {
 
             const urlJugadoresGitHub = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/main/jugadores.json'
-
+            const urlJugadoresCompleto = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/29dc6c3e6e7e2118b1110d9e7b1b25a1412f7358/jugadoresCompleto.json'
             //OBTENEMOS LOS DATOS JSON 
-            $.getJSON(urlJugadoresGitHub, function (data) {
+            $.getJSON(urlJugadoresCompleto, function (data) {
 
                 console.log(data.jugadores);
 
