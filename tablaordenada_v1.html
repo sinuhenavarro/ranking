@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            const urlJugadoresCompleto = 'https://raw.githubusercontent.com/estherostos/proyectofhw/main/jugadores.json'
+
+            //OBTENEMOS LOS DATOS JSON 
+            $.getJSON(urlJugadoresCompleto, function (data) {
+
+            //ORDENAMOS LA LISTA DE JUGADORES
+                
+                data.jugadores.sort((x, y) => y.totalpuntos - x.totalpuntos);
+                   
+               
+
+                // CREANDO UNA TABLA CON LOS DATOS
+
+                var html = '<table class="table table-striped">'
+                html += '<tr>'
+                html += '<th>' + 'Nombre' + '</th>'
+                html += '<th>' + 'Apellido' + '</th>'
+                html += '<th>' + 'Puntos' + '</th>'
+                html += '</tr>'
+                $.each(data.jugadores, function (index, value) {
+                    html += '<tr>'
+                    html += '<td>' + value.nombre + '</td>'
+                    html += '<td>' + value.apellido1 + '</td>'
+                    html += '<td>' + value.totalpuntos + '</td>'
+                    html += '</tr>'
+                })
+            
+                html += '</table>'
+                $('#tabla').html(html)
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h2>Creando una tabla con los datos de un JSON en URL remota</h2>
+    <div id="tabla"></div>
+
+</body>
+
+</html>
