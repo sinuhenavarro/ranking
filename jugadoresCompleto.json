@@ -1,0 +1,42 @@
+{
+   "jugadores": [
+      {
+         "usuario": "jugador1",
+         "nombre": "Pepito",
+         "apellido1": "Pérez",
+         "retos": [
+            {
+               "modulo": "LMSGI",
+               "puntos": "1"
+            },
+            {
+               "modulo": "SGB",
+               "puntos": "2"
+            },
+            {
+               "modulo": "LMSGI",
+               "puntos": "3"
+            }
+         ]
+      },
+      {
+         "usuario": "jugador2",
+         "nombre": "Mariquilla",
+         "apellido1": "Pérez",
+         "retos": [
+            {
+               "modulo": "LMSGI",
+               "puntos": "1"
+            },
+            {
+               "modulo": "SGB",
+               "puntos": "2"
+            },
+            {
+               "modulo": "SGB",
+               "puntos": "1"
+            }
+         ]
+      }
+   ]
+}

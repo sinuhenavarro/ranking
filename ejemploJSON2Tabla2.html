@@ -13,11 +13,11 @@
 
             const urlJugadoresGitHub = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/main/jugadores.json'
             const urlJugadoresCompleto = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/29dc6c3e6e7e2118b1110d9e7b1b25a1412f7358/jugadoresCompleto.json'
+            var json
             //OBTENEMOS LOS DATOS JSON 
             $.getJSON(urlJugadoresCompleto, function (data) {
-
-                console.log(data.jugadores);
-
+                console.log(json)
+ 
                 // CREANDO UNA TABLA CON LOS DATOS
                 var html = '<table class="table table-striped">'
                 html += '<tr>'

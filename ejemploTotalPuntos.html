@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            const urlJugadoresGitHub = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/main/jugadores.json'
+            const urlJugadoresCompleto = 'https://raw.githubusercontent.com/sinuhenavarro/sinuhenavarro.github.io/29dc6c3e6e7e2118b1110d9e7b1b25a1412f7358/jugadoresCompleto.json'
+
+            var json = {
+                "jugadores": [
+                    {
+                        "usuario": "jugador1",
+                        "nombre": "Pepito",
+                        "apellido1": "Pérez",
+                        "retos": [
+                            {
+                                "modulo": "LMSGI",
+                                "puntos": "1"
+                            },
+                            {
+                                "modulo": "SGB",
+                                "puntos": "2"
+                            },
+                            {
+                                "modulo": "LMSGI",
+                                "puntos": "3"
+                            }
+                        ]
+                    },
+                    {
+                        "usuario": "jugador2",
+                        "nombre": "Mariquilla",
+                        "apellido1": "Pérez",
+                        "retos": [
+                            {
+                                "modulo": "LMSGI",
+                                "puntos": "1"
+                            },
+                            {
+                                "modulo": "SGB",
+                                "puntos": "2"
+                            },
+                            {
+                                "modulo": "SGB",
+                                "puntos": "1"
+                            }
+                        ]
+                    }
+                ]
+            }
+/* OBTIENE UN ARRAY ASOCIATIVO POR NOMBRE DEL JUGADOR CON LOS PUNTOS TOTALES OBTENIDOS EN LOS DIFERENTES RETOS DE TODOS LO MÓDULOS
+*/
+            function listaTotalPuntos(json, totalPuntos) {
+       
+                console.log(json)
+                //OBTENIENDO PUNTOS DE CADA JUGADOR EN UN ARRAY ASOCIATIVO
+                json.jugadores.forEach(j => {
+                    var p = 0;
+                    j.retos.forEach(r => {
+                        p += Number(r.puntos)
+
+                    })
+                    console.log(p)
+                    totalPuntos[j.usuario] = p
+                })
+                console.log(totalPuntos)
+            }
+
+            var totalPuntos = []
+            listaTotalPuntos(json, totalPuntos)
+
+        })
+       // })
+    </script>
+</head>
+
+<body>
+    <h2>Probando función que obtiene los puntos totales de cada jugador</h2>
+    <p><em>Se ha modificado el formato del fichero JSON para poder recorrerlo más cómodamente</em></p>
+    <div id="tabla"></div>
+
+</body>
+
+</html>
